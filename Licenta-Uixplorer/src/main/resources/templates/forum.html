@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum | UIXPLORER</title>
+
+    <link rel="stylesheet" th:href="@{/style/utils.css}">
+    <link rel="stylesheet" th:href="@{/style/homepage/header.css}">
+    <link rel="stylesheet" th:href="@{/style/style.css}">
+    <link rel="stylesheet" th:href="@{/style/forum.css}">
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <link rel="icon" type="image/png" th:href="@{/images/icon-nobg.png}">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css}">
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Ubuntu&display=swap}" rel="stylesheet">
+</head>
+<body>
+
+<header class="header container">
+    <nav>
+        <ul class="header__menu">
+            <li>
+                <ul class="header__link">
+                    <li><a th:href="@{/homepage}">HOME</a></li>
+                    <li><a th:href="@{/about}">ABOUT</a></li>
+                    <li><a th:href="@{/articles}">ARTICLES</a></li>
+                    <li><a th:href="@{/forum}">FORUM</a></li>
+                </ul>
+            </li>
+            <li class="header__logo">
+                <img th:src="@{/images/LOGO-figma2.png}" alt="logo">
+            </li>
+            <li class="header__right">
+
+                <div class="before_avatar">
+                    <div class="friends-list">
+                        <i class="fa-solid fa-user-group" th:onclick = "toggleFriendsMenu()"></i>
+
+                        <div class="friends-menu-wrap" id="friendsMenuWrap">
+
+                            <div th:if="${hasfriends == true}">
+                                <div class="friends-menu" id="friendsMenu">
+                                    <h4>Your Friends</h4>
+                                    <div class="friend-item" th:each="friend : ${friendsList}" onclick="openChat(this)">
+                                        <input type="hidden" name="chosenFriendId" th:id="'friendId-' + ${friend.id}" th:value="${friend.id}">
+                                        <div class="friend-pic">
+                                            <img th:src="${friend.image}">
+                                        </div>
+                                        <h5 th:text="${friend.name}"></h5>
+                                        <i class="fa-regular fa-message"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div th:if="${hasfriends == false}">
+                                <div class="friends-menu">
+                                    <h4>No friends</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header__avatar">
+                    <img th:src="${image}" alt="default avatar" class= "header-avatar" th:onclick = "toggleMenu()">
+                </div>
+
+            </li>
+        </ul>
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <div class="user-info-avatar">
+                        <img th:src="${image}">
+                    </div>
+                    <h3 th:text="${name}"></h3>
+                </div>
+                <hr>
+
+                <a th:href="@{/account}" class="sub-menu-link">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <p>YOUR ACCOUNT</p>
+                    <span>></span>
+                </a>
+
+                <a th:href="@{/dashboard}" class="sub-menu-link">
+                    <i class="fa-brands fa-elementor"></i>
+                    <p>DASHBOARD</p>
+                    <span>></span>
+                </a>
+
+                <a th:href="@{/logout}" class="sub-menu-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <p>LOGOUT</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="fire">
+        <i class="fa-solid fa-fire"></i>
+        <div class="fire-text">
+            <h5 th:text="${daysMessage}"></h5>
+        </div>
+    </div>
+</header>
+
+
+<main>
+    <div class="main__title">
+        <h1>Forum</h1>
+    </div>
+
+    <div class="add__btn">
+        <a th:href="@{/add-forum}">
+            <button type="submit">
+                <i class="fa-regular fa-square-plus"> </i>
+                <span>Start discussion</span>
+            </button>
+        </a>
+    </div>
+
+    <div class="discussions__menu">
+
+        <div class="discussion__item" th:each="discussion : ${discussions}">
+
+            <div class="user__details">
+                <img th:src="${discussion.userImage}">
+                <h5 th:text="${discussion.userName}"></h5>
+            </div>
+
+            <div class="msg__details">
+                <div class="discussion__msg">
+                    <h3 th:text="${discussion.message}"></h3>
+                </div>
+                <div class="comments__menu">
+                    <div class="comment__item" th:each="comment : ${discussion.commentsList}">
+                        <i class="fa-solid fa-arrow-turn-up"></i>
+                        <div class="comment__user__details">
+                            <img th:src="${comment.userImage}">
+                            <h5 th:text="${comment.userName}"></h5>
+                        </div>
+                        <div class="comment__msg">
+                            <h4 th:utext="${comment.message}"></h4>
+                        </div>
+                        <div class="comment__time">
+                            <h5 th:text="${comment.timePosted}"></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="commentForm" th:action="@{/add-comment}" method="post" class="add__comm" th:object="${comment}">
+                    <input type="hidden" name="discussionId" th:value="${discussion.id}" />
+                    <textarea name="message" placeholder="Add a new comment..." class="new_comm_text" maxlength="400" required></textarea>
+                </form>
+            </div>
+            <div class="discussion__time">
+                <h5 th:text="${discussion.timePosted}"></h5>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <img th:src="${friendImg}" class="chat-friends-img">
+            <h5 th:text="${friendName}"></h5>
+            <i class="fa-solid fa-times" th:onclick="closeChat()"></i>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="messages-menu" id="messagesMenu">
+            </div>
+        </div>
+        <div class="chat-footer">
+            <form id="sendMessageForm">
+                <input type="text" id="chatInput" name="chatmsg" th:value="${chatmsg}" placeholder="Type a message...">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+<footer class="footer container">
+    <ul class="footer__menu">
+        <li><a th:href="@{/contact}">CONTACT</a></li>
+        <li>
+            <div>
+                <ul class="social">
+                    <li>
+                        <a th:href="@{https://www.linkedin.com/in/lavinia-smantana/}"> <i class="fa-brands fa-linkedin"></i> </a>
+                    </li>
+                    <li>
+                        <a th:href="@{https://github.com/LaviniaSmantana}"> <i class="fa-brands fa-square-github"></i> </a>
+                    </li>
+                    <li>
+                        <a th:href="@{https://www.facebook.com/lavinia.smantana/}"><i class="fa-brands fa-square-facebook"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</footer>
+
+<script th:src="@{/files/header-functions.js}"> </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const commentForms = document.querySelectorAll("form.add__comm");
+
+        if (localStorage.getItem("scrollPosition")) {
+            window.scrollTo(0, localStorage.getItem("scrollPosition"));
+            localStorage.removeItem("scrollPosition");
+        }
+
+        commentForms.forEach(function(commentForm) {
+            const textarea = commentForm.querySelector("textarea");
+
+            textarea.addEventListener("keydown", function(event) {
+                if (event.key === "Enter" && !event.shiftKey) {
+                    event.preventDefault();
+                    localStorage.setItem("scrollPosition", window.scrollY);
+                    commentForm.submit();
+                }
+            });
+        });
+    });
+</script>
+
+
+</body>
+</html>

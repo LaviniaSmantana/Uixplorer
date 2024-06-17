@@ -1,0 +1,115 @@
+.box{
+    margin-top: 50px;
+}
+
+.box h1{
+    font-size:var(--size-5xl);
+    color: var(--orange);
+    font-weight: 800;
+}
+
+.account_menu{
+    margin-top: 50px;
+    background: linear-gradient(var(--navy), #308D8D);
+    width: 1500px;
+    height: 600px;
+    box-shadow: 10px 10px 50px var(--navy);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.account_form{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.form_left{
+    text-align: left;
+    padding-left: 120px;
+    padding-top: 20px;
+}
+
+.account_form h4{
+    font-size: var(--size-2xl);
+    text-align: left;
+    color: var(--bkg);
+    padding-bottom: 10px;
+    padding-top: 50px;
+}
+
+.account_form input{
+    background: var(--bkg);
+    border-radius: 20px;
+    width: 480px;
+    height: 50px;
+    box-shadow: 5px 5px 20px var(--navy);
+}
+
+input[type="text"]{
+    font-size: var(--size-2xl);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+input[type="password"]{
+    font-size: var(--size-2xl);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+input[type="file"]{
+    font-size: var(--size-xl);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.form_right{
+    padding-top: 20px;
+    padding-right: 120px;
+}
+
+.profile_pic{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.profile_pic input{
+    background: var(--bkg);
+    border-radius: 20px;
+    width: 250px;
+    height: 50px;
+    box-shadow: 5px 5px 20px var(--navy);
+}
+
+
+.profile_pic img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    background-color: var(--light-gray-full);
+    border-radius: 50%;
+    margin-top: 50px;
+}
+
+.account_menu button{
+    text-align: center;
+    width: 220px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: var(--orange);
+    font-size: var(--size-2xl);
+    font-weight: 600;
+    color: var(--bkg);
+    box-shadow: 8px 8px 20px var(--navy);
+    margin-top: 50px;
+    transition: 0.5s;
+}
+
+.account_menu button:hover{
+    background-color: var(--orange-light);
+    color: var(--light-gray-full);
+}

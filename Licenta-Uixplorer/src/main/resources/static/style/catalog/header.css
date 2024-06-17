@@ -1,0 +1,140 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.header__menu{
+    display:none;
+}
+
+
+.header__bars {
+    color: var(--navy);
+    width: var(--size-2xl);
+    height: var(--size-2xl);
+    display: block;
+    margin-left: 350px;
+}
+
+/* XS */
+@media (min-width: 475px){
+    .container{
+        max-width: 475px;
+    }
+}
+
+/* SM */
+@media (min-width: 640px){
+    .container{
+        max-width: 640px;
+    }
+}
+
+/* MD */
+@media (min-width: 768px){
+    .header__menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        gap: 120px;
+    }
+    
+    .header__link{
+        display: flex;
+        justify-content: center;
+        /* margin-right: 310px; */
+        margin-left: -200px;
+    }
+
+    .header__link a{
+        font-size: var(--size-xxs);
+        text-decoration: none;
+        font-weight: 600;
+        color: var(--navy);
+        letter-spacing: -0.05em;
+        transition: 0.3s;
+        margin-right: 20px;
+    }
+    
+    .header__link a:hover {
+        color: var(--orange);
+    }
+    
+
+    .header__logo img{
+        width: 120px;
+    }
+
+    .header__bars{
+        display: none;
+    }
+}
+
+/* LG */
+@media (min-width: 1024px){
+
+    .header__link{
+        margin-left: -260px;
+    }
+
+    .header__link a{
+        font-size: var(--size-sm);
+    }
+    
+
+    .header__logo img{
+        width: 150px;
+    }
+    
+}
+
+/* XL */
+@media (min-width: 1280px){
+    .container{
+        max-width: 1280px;
+    }
+}
+
+/* 2XL */
+@media (min-width: 1536px){
+
+    .header__menu{
+        gap: 250px;
+    }
+
+    .header__link{
+        margin-left: -450px;
+    }
+
+    .header__link a{
+        font-size: var(--size-base);
+    }
+
+    .header__logo img{
+        width: 170px;
+    }
+
+    .header__avatar {
+        width: 80px;
+        height: 80px;
+        background-color: var(--navy);
+        border-radius: 100px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .header__avatar img{
+        display: inline-block;
+        margin: 0 auto;
+        width: 80px;
+        border-radius: 100px;
+        object-fit: cover;
+        margin-top: 5px;
+    }
+
+}

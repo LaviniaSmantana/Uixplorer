@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | UIXPLORER</title>
+
+    <link rel="stylesheet" th:href="@{/style/homepage/header.css}">
+    <link rel="stylesheet" th:href="@{/style/utils.css}">
+    <link rel="stylesheet" th:href="@{/style/style.css}">
+    <link rel="stylesheet" th:href="@{/style/contact.css}">
+    <link rel="icon" type="image/png" th:href="@{/images/icon-nobg.png}">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css}">
+</head>
+<body>
+
+<header class="header container">
+    <nav>
+        <ul class="header__menu">
+            <div class="header__link">
+                <li><a th:href="@{/}">HOME</a></li>
+                <li><a th:href="@{/about-me}">ABOUT</a></li>
+                <li><a th:href="@{/contact-me}">CONTACT</a></li>
+            </div>
+            <li class="header__logo">
+                <img th:src="@{/images/LOGO-figma2.png}">
+            </li>
+            <li>
+                <a class="header__sign btn" th:href="@{/login}">LOGIN</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<section class="box container">
+
+    <form th:action="@{https://api.web3forms.com/submit}" method="POST" class="contact-left">
+        <div class="contact-left-title">
+            <h1>Feel free to reach out with feedback, questions or just to say hello!</h1>
+            <hr>
+        </div>
+        <input type="hidden" name="access_key" value="bbef8e09-2b6f-4603-8aa7-e33a15a07071">
+
+        <input type="text" name="email" placeholder="Email" class="contact-inputs" required>
+        <input type="text" name="subject" placeholder="Subject" class="contact-inputs" required>
+
+        <textarea name="message" placeholder="Message" class="contact-inputs" maxlength="300" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+    <div class="contact-right">
+        <img th:src="@{/images/avatar-contact.png}" alt="avatar" />
+    </div>
+</section>
+
+<footer class="footer container">
+    <ul class="footer__menu">
+        <li><a th:href="@{/contact-me}">CONTACT</a></li>
+        <li>
+            <div>
+                <ul class="social">
+                    <li>
+                        <a th:href="@{https://www.linkedin.com/in/lavinia-smantana/}"> <i class="fa-brands fa-linkedin"></i> </a>
+                    </li>
+                    <li>
+                        <a th:href="@{https://github.com/LaviniaSmantana}"> <i class="fa-brands fa-square-github"></i> </a>
+                    </li>
+                    <li>
+                        <a th:href="@{https://www.facebook.com/lavinia.smantana/}"><i class="fa-brands fa-square-facebook"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</footer>
+
+</body>
+</html>

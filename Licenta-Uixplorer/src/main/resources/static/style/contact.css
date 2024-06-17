@@ -1,0 +1,122 @@
+
+.box{
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: linear-gradient(var(--navy), #308D8D);
+    border-radius: 20px;
+}
+
+
+.contact-left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.contact-left-title h1{
+    font-weight: 600;
+    font-size: var(--size-2xl);
+    color: var(--bkg);
+}
+
+.contact-left-title hr{
+    border: none;
+    width: 760px;
+    height: 2px;
+    background-color: var(--teal);
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: var(--gray);
+    font-size: var(--size-xl);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.contact-left textarea{
+    width: 700px;
+    height: 170px;
+    padding-top: 15px;
+    border-radius: 10px;
+}
+
+.contact-inputs:focus{
+    border: 2px solid var(--orange-light);
+}
+
+.contact-inputs::placeholder{
+    color: var(--gray);
+}
+
+.contact-left button{
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: var(--size-lg);
+    font-weight: 600;
+    color: var(--bkg);
+    gap: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--orange);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.contact-left button:hover{
+    background-color: var(--orange-light);
+}
+
+.contact-right img{
+    width: 450px;
+}
+
+
+.footer{
+    margin-top: 80px;
+    height: 80px;
+}
+
+.footer__menu{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-direction: row;
+    gap: 700px;
+}
+
+.footer__menu a{
+    color: var(--navy);
+    font-size: var(--size-xl);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.footer__menu a:hover{
+    color: var(--orange);
+}
+
+.social{
+    margin-top: -10px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.social i{
+    font-size: var(--size-3xl);
+}

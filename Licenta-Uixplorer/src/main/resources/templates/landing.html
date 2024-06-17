@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UIXPLORER</title>
+
+        <link rel="preconnect" href="@{https://fonts.googleapis.com}">
+        <link rel="icon" type="image/png" th:href="@{/images/icon-nobg.png}">
+        <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css}">
+    
+        <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+        <link th:href="@{https://fonts.googleapis.com/css2?family=Ubuntu&amp;display=swap}" rel="stylesheet">
+
+        <link rel="stylesheet" th:href="@{/style/homepage/header.css}">
+        <link rel="stylesheet" th:href="@{/style/homepage/hero.css}">
+        <link rel="stylesheet" th:href="@{/style/utils.css}">
+        <link rel="stylesheet" th:href="@{/style/style.css}">
+    </head>
+<body>
+    
+    <header class="header container">
+        <nav>
+            <ul class="header__menu">
+                <div class="header__link">
+                    <li><a th:href="@{/}">HOME</a></li>
+                    <li><a th:href="@{/about-me}">ABOUT</a></li>
+                    <li><a th:href="@{/contact-me}">CONTACT</a></li>
+                </div>
+                <li class="header__logo">
+                    <img th:src="@{/images/LOGO-figma2.png}" alt="logo" />
+                </li>
+                <li>
+                    <a class="header__sign btn" th:href="@{/login}">LOGIN</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+<main>
+    <section class="hero container">
+        <ul class="hero__menu">
+            <li>
+                <div class="wrapper">
+                    <div class="row">
+                        <div class="box">
+                            <i class="fa-solid fa-users"></i>
+                            <span class="num" th:data-val="${totalUsers}">000</span>
+                        </div>
+                        <div class="box__text">
+                            <h3>Enrolled Users</h3>
+                        </div>
+                    </div>
+            
+                    <div class="row">
+                        <div class="box">
+                            <i class="fa-brands fa-leanpub"></i>
+                            <span class="num" th:data-val="${totalArticles}">000</span>
+                        </div>
+                        <div class="box__text">
+                            <h3>Free Articles</h3>
+                        </div>
+                    </div>
+            
+                    <div class="row">
+                        <div class="box">
+                            <i class="fa-solid fa-rectangle-list"></i>
+                            <span class="num" data-val="1">0</span>
+                        </div>
+                        <div class="box__text">
+                            <h3>Forum for all</h3>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="hero__box">
+                    <h1>Level Up Your Design Expertise Today!</h1>
+                    <h4></h4>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <footer class="footer container">
+        <ul class="footer__menu">
+            <li><a th:href="@{/contact-me}">CONTACT</a></li>
+            <li>
+                <div>
+                    <ul class="social">
+                        <li>
+                            <a th:href="@{https://www.linkedin.com/in/lavinia-smantana/}"> <i class="fa-brands fa-linkedin"></i> </a>
+                        </li>
+                        <li>
+                            <a th:href="@{https://github.com/LaviniaSmantana}"> <i class="fa-brands fa-square-github"></i> </a>
+                        </li>
+                        <li>
+                            <a th:href="@{https://www.facebook.com/lavinia.smantana/}"><i class="fa-brands fa-square-facebook"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </footer>
+
+</main>
+
+
+    <script>
+
+        let valueDisplays = document.querySelectorAll(".num");
+        let interval = 4000;
+
+        valueDisplays.forEach(valueDisplay => {
+            let startValue = 0;
+            let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+
+            let duration = Math.floor(interval / endValue);
+            let counter = setInterval(function () {
+                startValue += 1;
+                valueDisplay.textContent = startValue;
+                if (startValue == endValue) {
+                    clearInterval(counter);
+                }
+            }, duration);
+        });
+
+        </script>
+
+
+</body>
+</html>

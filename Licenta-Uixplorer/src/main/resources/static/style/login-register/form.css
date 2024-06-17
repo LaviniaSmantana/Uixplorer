@@ -1,0 +1,234 @@
+.text-form{
+    margin-top: 70px;
+    padding-left: 240px;
+    padding-right: 200px;
+}
+
+.form__menu{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 120px;
+}
+
+.form__menu__log{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 300px;
+}
+
+.form__box{
+    background: linear-gradient(var(--navy), #308D8D);
+    width: 1200px;
+    height: 600px;
+    border-radius: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    box-shadow: 10px 10px 50px var(--navy);
+}
+
+.form-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 160px;
+}
+
+.form-right{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.form-right label{
+    font-size: var(--size-2xl);
+    text-align: left;
+    color: var(--bkg);
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.form-right select{
+    background: var(--bkg);
+    border-radius: 20px;
+    width: 350px;
+    height: 50px;
+    box-shadow: 5px 5px 20px var(--navy);
+    margin-bottom: 55px;
+    font-size: var(--size-2xl);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.form-right option{
+    font-size: var(--size-xl);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.form-right input{
+    background: var(--bkg);
+    border-radius: 20px;
+    width: 320px;
+    height: 50px;
+    box-shadow: 5px 5px 20px var(--navy);
+    margin-bottom: 55px;
+    font-size: var(--size-2xl);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.text__field{
+    padding-left: 100px;
+    position: relative;
+    margin: 50px 0;
+}
+
+.text__field h4{
+    font-size: var(--size-2xl);
+    text-align: left;
+    color: var(--bkg);
+    padding-bottom: 10px;
+}
+
+.text__field input{
+    background: var(--bkg);
+    border-radius: 20px;
+    width: 350px;
+    height: 50px;
+    box-shadow: 5px 5px 20px var(--navy);
+}
+
+input[type="text"]{
+    font-size: var(--size-2xl);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+input[type="password"]{
+    font-size: var(--size-2xl);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+input[type="email"]{
+    font-size: var(--size-2xl);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sign_btn button {
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: var(--orange);
+    margin-left: 465px;
+    font-size: var(--size-2xl);
+    font-weight: 600;
+    color: var(--bkg);
+    box-shadow: 8px 8px 20px var(--navy);
+    transition: 0.5s;
+}
+
+.form__box .sign_btn button{
+    margin-top: 20px;
+    margin-left: 180px;
+}
+
+.form__box .log{
+    margin-top: 15px;
+    margin-left: 110px;
+}
+
+.login__form__box .sign_btn button{
+    margin-left: 240px;
+}
+
+.login__form__box .text__field input{
+    background: var(--bkg);
+    border-radius: 20px;
+    width: 450px;
+    height: 50px;
+    box-shadow: 5px 5px 20px var(--navy);
+}
+
+.sign_btn button:hover {
+    background-color: var(--orange-light);
+    color: var(--light-gray-full);
+}
+
+.avatar__box__reg{
+    height: 450px;
+}
+
+.avatar__box__reg h1{
+    color: var(--orange-light);
+    font-size: var(--size-3xl);
+    font-weight: 800;
+    margin-left: 50px;
+}
+
+.avatar__box__reg .avatar__pic{
+    margin-top: -40px;
+}
+
+.avatar__box__reg .avatar__pic img{
+    width: 450px;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* login  */
+
+.avatar__box{
+    height: 600px;
+}
+
+.avatar__box h1{
+    color: var(--orange-light);
+    font-size: var(--size-6xl);
+    font-weight: 800;
+}
+
+.avatar__pic{
+    margin-top: -20px;
+}
+
+.avatar__pic img{
+    width: 570px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.login__form__box{
+    margin-top: 70px;
+    background: linear-gradient(var(--navy), #308D8D);
+    width: 700px;
+    height: 440px;
+    border-radius: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    box-shadow: 10px 10px 50px var(--navy);
+}
+
+.login__form__box .log{
+    margin-top: 40px;
+    text-align: center;
+}
+.log h4{
+    font-size: var(--size-xl);
+    color: var(--dark-gray);
+}
+
+.log a{
+    text-decoration: none;
+    color: var(--bkg);
+}
+
+.log a:hover{
+    color: var(--orange);
+}

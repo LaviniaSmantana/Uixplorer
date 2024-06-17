@@ -1,0 +1,132 @@
+
+.welcome__menu{
+    padding-top: 130px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    flex-direction: row;
+    gap: 150px;
+    margin-left: 100px;
+}
+
+.welcome__menu h1{
+    font-size: var(--size-4xl);
+    width: 700px;
+    color: var(--orange);
+    font-weight: 800;
+}
+
+.welcome__menu h4{
+    margin-top: 100px;
+    width: 460px;
+    font-size: var(--size-2xl);
+    text-align: right;
+    color: var(--navy);
+}
+
+.welcome__menu img{
+    margin-top: -100px;
+    width: 600px;
+}
+
+.about h1{
+    color: var(--navy);
+    text-align: center;
+    margin-top: 150px;
+    font-size: var(--size-5xl);
+    font-weight: 800;
+}
+
+.about__menu{
+    padding-top: 130px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    flex-direction: row;
+    gap: 150px;
+    margin-left: 100px;
+}
+
+.about__img img{
+    width: 450px;
+    margin-left: 50px;
+}
+
+.about__menu h4{
+    margin-top: 180px;
+    width: 460px;
+    font-size: var(--size-2xl);
+    text-align: left;
+    color: var(--navy);
+}
+
+.motivation h1{
+    color: var(--navy);
+    text-align: center;
+    margin-top: 200px;
+    font-size: var(--size-5xl);
+    font-weight: 800;
+}
+
+.motivation__menu {
+    padding-top: 130px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    flex-direction: row;
+    gap: 150px;
+    margin-left: 100px;
+}
+
+.motivation__menu h4{
+    margin-top: 120px;
+    width: 460px;
+    font-size: var(--size-2xl);
+    text-align: right;
+    color: var(--navy);
+    margin-left: 50px;
+}
+
+.motivation__img img{
+    width: 500px;
+}
+
+
+.footer{
+    margin-top: 200px;
+    height: 100px;
+    padding-bottom: 50px;
+}
+
+.footer__menu{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-direction: row;
+    gap: 700px;
+}
+
+.footer__menu a{
+    color: var(--navy);
+    font-size: var(--size-xl);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.footer__menu a:hover{
+    color: var(--orange);
+}
+
+.social{
+    margin-top: -10px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.social i{
+    font-size: var(--size-3xl);
+}

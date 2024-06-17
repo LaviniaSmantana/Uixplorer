@@ -1,0 +1,175 @@
+.main__title{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.main__title h1{
+    color: var(--orange);
+    font-size: var(--size-5xl);
+    font-weight: 800;
+}
+
+.db__articles{
+    margin-top: 100px;
+}
+
+.db__articles .db__title h3{
+    color: var(--navy);
+    font-size: var(--size-3xl);
+    font-weight: 600;
+}
+
+.articles__menu{
+    margin-top: 20px;
+    display: flex;
+    align-items:baseline;
+    justify-content:flex-start;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.articles__menu a{
+    text-decoration: none;
+}
+
+.articles__item{
+    position: relative;
+    width: 250px;
+    height: 180px;
+    padding: 10px 5px;
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: var(--light-gray);
+    text-align: center;
+    transition: 0.5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.articles__item img{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 220px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.articles__item h5{
+    font-size: var(--size-xl);
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--navy);
+    transition: 0.7s ease-in-out;
+}
+
+.articles__item .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    background-color: var(--navy);
+    border-radius: 20px;
+}
+
+.articles__item:hover .overlay{
+    opacity: 0.80;
+
+}
+
+.articles__item:hover h5{
+    transform: translateY(-45px);
+    color: var(--bkg);
+}
+
+
+.db__badges{
+    margin-top: 200px;
+}
+
+.db__badges .db__title h3{
+    color: var(--navy);
+    font-size: var(--size-3xl);
+    font-weight: 600;
+}
+
+
+.badges__menu{
+    margin-top: 20px;
+    display: flex;
+    align-items:baseline;
+    justify-content:flex-start;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.badges__item{
+    width: 160px;
+    height: 140px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.badges__item img{
+    width: 150px;
+}
+
+.badge__title{
+    width: 150px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.badge__title h5{
+    color: var(--navy);
+    font-size: var(--size-lg);
+    font-weight: 600;
+    margin-left: 7px;
+}
+
+
+
+
+.footer{
+    margin-top: 200px;
+    height: 80px;
+}
+
+.footer__menu{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-direction: row;
+    gap: 700px;
+}
+
+.footer__menu a{
+    color: var(--navy);
+    font-size: var(--size-xl);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.footer__menu a:hover{
+    color: var(--orange);
+}
+
+.social{
+    margin-top: -10px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.social i{
+    font-size: var(--size-3xl);
+}

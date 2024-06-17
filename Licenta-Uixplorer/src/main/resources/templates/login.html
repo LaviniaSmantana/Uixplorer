@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - UIXPLORER</title>
+    <link rel="icon" type="image/png" th:href="@{/images/icon-nobg.png}">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/style/utils.css}">
+    <link rel="stylesheet" th:href="@{/style/style.css}">
+    <link rel="stylesheet" th:href="@{/style/login-register/header.css}">
+    <link rel="stylesheet" th:href="@{/style/login-register/form.css}">
+</head>
+
+<body>
+
+<header class="header container">
+    <nav>
+        <ul class="header__menu">
+            <div class="header__link">
+                <li><a th:href="@{/}">HOME</a></li>
+                <li><a th:href="@{/about-me}">ABOUT</a></li>
+                <li><a th:href="@{/contact-me}">CONTACT</a></li>
+            </div>
+            <li class="header__logo">
+                <img th:src="@{/images/LOGO-figma2.png}" alt="logo">
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+<main>
+
+    <section class="text-form">
+        <ul class="form__menu">
+            <li class="login__form__box">
+                    <form th:action="@{/login/check}" method="post" th:object="${AppUser}">
+                        <div class="text__field">
+                            <h4>Email</h4>
+                            <input type="text" required id="email" name="email">
+                        </div>
+
+                        <div class="text__field">
+                            <h4>Password</h4>
+                            <input type="password" required id="password" name="password">
+                        </div>
+
+                        <div class="sign_btn">
+                            <button type="submit">Login</button>
+                        </div>
+
+                        <div class="log">
+                            <h4>Don't have an account? <a th:href="@{/register}"> Register today!</a></h4>
+                        </div>
+
+                        <div th:if="${param.error}">Email or password incorrect</div>
+                    </form>
+            </li>
+            <li class="avatar__box">
+                    <h1>Welcome back!</h1>
+                    <div class="avatar__pic">
+                        <img th:src="@{/images/avatar4.png}">
+                    </div>
+            </li>
+        </ul>
+    </section>
+
+</main>
+
+</body>
+</html>

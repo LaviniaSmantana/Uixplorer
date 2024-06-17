@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - UIXPLORER</title>
+    <link rel="icon" type="image/png" th:href="@{/images/icon-nobg.png}">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css}">
+
+    <link rel="stylesheet" th:href="@{/style/utils.css}">
+    <link rel="stylesheet" th:href="@{/style/style.css}">
+    <link rel="stylesheet" th:href="@{/style/login-register/header.css}">
+    <link rel="stylesheet" th:href="@{/style/login-register/form.css}">
+</head>
+
+<body>
+
+<header class="header container">
+    <nav>
+        <ul class="header__menu">
+            <div class="header__link">
+                <li><a th:href="@{/}">HOME</a></li>
+                <li><a th:href="@{/about-me}">ABOUT</a></li>
+                <li><a th:href="@{/contact-me}">CONTACT</a></li>
+            </div>
+            <li class="header__logo">
+                <img th:src="@{/images/LOGO-figma2.png}" alt="logo" />
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+<main>
+
+    <section class="text-form">
+        <ul class="form__menu">
+            <li class="form__box">
+                <form th:action="@{/register/save}" method="post" th:object="${appUser}" enctype="multipart/form-data">
+                    <div class="form-flex">
+                        <div class="form-left">
+                            <div class="text__field">
+                                <h4>Email</h4>
+                                <input type="email" id="email" name="email" th:field ="*{email}" required>
+                                <span id="emailError" th:text="${emailError}" style="color: rgb(255, 94, 0); display: block; margin-top: 5px; margin-left: 10px;"></span>
+                            </div>
+
+                            <div class="text__field">
+                                <h4>Full Name</h4>
+                                <input type="text" id="fullname" name="fullname" th:field ="*{name}" required>
+                                <span id="nameError" th:text="${nameError}" style="color: rgb(255, 94, 0); display: block; margin-top: 5px; margin-left: 10px;"></span>
+                            </div>
+
+                            <div class="text__field">
+                                <h4>Password</h4>
+                                <input type="password" id="password" name="password" th:field ="*{password}" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required minlength="8">
+                                <span id="passwordError" th:text="${passwordError}" style="color: rgb(255, 94, 0); display: block; margin-top: 5px; margin-left: 10px;"></span>
+                            </div>
+
+                            <div class="sign_btn">
+                                <button type="submit">Register</button>
+                            </div>
+
+                            <div class="log">
+                                <h4>Already have an account? <a th:href="@{/login}"> Login here!</a></h4>
+                            </div>
+                        </div>
+
+                        <div class="form-right">
+                            <label for="country">Country</label>
+                            <select id="country" name="country" required>
+                                <option value="">Select Country</option>
+                            </select>
+
+                            <label for="state">State</label>
+                            <select id="state" name="state" required>
+                                <option value="">Select State</option>
+                            </select>
+
+                            <label for="imageFile">Profile picture</label>
+                            <input id="imageFile" type="file" name="imageFile" accept="image/*" required>
+
+                            <label for="birthday">Date of Birth</label>
+                            <input type="date" id="birthday" required name="birthday">
+                        </div>
+                    </div>
+
+                </form>
+            </li>
+            <li class="avatar__box__reg">
+                <h1>Sign up for free!</h1>
+                <div class="avatar__pic">
+                    <img th:src="@{/images/apple-sticker.png}" alt="sticker"/>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+</main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById('registerForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const nameInput = document.getElementById('fullname');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+        const nameError = document.getElementById('nameError');
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        function validateEmail() {
+            if (!emailRegex.test(emailInput.value)) {
+                emailError.textContent = 'Invalid email address';
+            } else if (emailInput.value.trim() === '') {
+                        emailError.textContent = 'Email is required';
+            } else {
+                emailError.textContent = '';
+            }
+        }
+
+            function validatePassword() {
+            const password = passwordInput.value;
+            const hasUppercase = /[A-Z]/.test(password);
+            const hasDigit = /\d/.test(password);
+            const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+            const isValidLength = password.length >= 8;
+
+            if(passwordInput.validity.valueMissing) {
+                passwordError.textContent = 'Password is required';
+            }
+            else {
+                if (!isValidLength) {
+                    passwordError.textContent = 'Password must be at least 8 characters long';
+                } else if (!hasUppercase) {
+                    passwordError.textContent = 'Password must contain at least one uppercase letter';
+                } else if (!hasDigit) {
+                    passwordError.textContent = 'Password must contain at least one digit';
+                } else if (!hasSpecialChar) {
+                    passwordError.textContent = 'Password must contain at least one special character';
+                } else {
+                    passwordError.textContent = '';
+                }
+        }
+        }
+
+       function validateName() {
+        if (nameInput.value.trim() === '') {
+            nameError.textContent = 'Full Name is required';
+        } else {
+            nameError.textContent = '';
+        }
+    }
+
+        emailInput.addEventListener('input', validateEmail);
+        passwordInput.addEventListener('input', validatePassword);
+        nameInput.addEventListener('input', validateName);
+
+      function validateForm(event) {
+        const isEmailValid = validateEmail();
+        const isPasswordValid = validatePassword();
+        const isNameValid = validateName();
+
+        if (!isEmailValid || !isPasswordValid || !isNameValid) {
+            event.preventDefault();
+            }
+        }
+        form.addEventListener('submit', validateForm);
+
+        form.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                validateForm(event);
+            }
+        });
+    });
+</script>
+
+<script th:src="@{https://code.jquery.com/jquery-3.6.0.min.js}"></script>
+
+<script th:inline="javascript">
+    $(document).ready(function () {
+        $.getJSON('../files/countries.json', function (data) {
+            const countriesData = data;
+
+            countriesData.forEach(country => {
+                $('#country').append(`<option value="${country.name}">${country.name}</option>`);
+            });
+
+            $('#country').on('change', function () {
+                const selectedCountryName = $(this).val();
+                const selectedCountry = countriesData.find(country => country.name === selectedCountryName);
+
+                $('#state').empty().append('<option value="">Select State</option>');
+
+                if (selectedCountry && selectedCountry.states.length > 0) {
+                    selectedCountry.states.forEach(state => {
+                        $('#state').append(`<option value="${state.name}">${state.name}</option>`);
+                    });
+                } else {
+                    $('#state').append('<option value="">No states available</option>');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

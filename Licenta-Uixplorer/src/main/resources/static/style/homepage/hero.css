@@ -1,0 +1,396 @@
+.mainhome{
+    margin-bottom: 300px;
+}
+
+.hero{
+    padding-top: 50px;
+    background-image: url("/images/Blobs.png");
+    background-size: 900px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 700px;
+}
+
+.hero__menu{
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-direction: row;
+    gap: 600px;
+}
+
+.wrapper{
+    padding-left: 50px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.wrapper .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em 0;
+    position: relative;
+    gap: 80px;
+}
+
+.wrapper .row .box{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: var(--orange);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.row .box i {
+    color: var(--bkg);
+    font-size: var(--size-3xl);
+    text-align: center;
+    padding-top: 10px;
+}
+
+.row .box span.num{
+    color: var(--bkg);
+    display: grid;
+    text-align: center;
+    font-weight: 600;
+    font-size: var(--size-2xl);
+    padding-bottom: 5px;
+}
+
+.row .box__text{
+    width: 200px;
+}
+
+.row h3{
+    color: var(--navy);
+    text-align: left;
+    padding-top: 35px;
+    font-size: var(--size-2xl);
+}
+
+.hero__box{
+    width: 700px;
+}
+
+.hero__menu h1{
+    color: var(--navy);
+    font-size: var(--size-6xl);
+    text-align: center;
+    font-weight: 800;
+    margin-top: 120px;
+    z-index: 20;
+}
+
+.recom{
+    margin-top: 100px;
+}
+
+.rec__title {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.rec__title h1{
+    font-size: var(--size-6xl);
+    color: var(--navy);
+    font-weight:800;
+    margin-bottom: 50px;
+}
+
+.articles__rec{
+    margin-top: 50px;
+    margin-bottom: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.articles__rec a{
+    text-decoration: none;
+}
+
+.articles__item{
+    position: relative;
+    width: 400px;
+    height: 270px;
+    padding: 10px 5px;
+    margin-top: 50px;
+    border-radius: 20px;
+    background-color: var(--light-gray);
+    text-align: center;
+    transition: 0.5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.articles__item img{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 380px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.articles__item h5{
+    font-size: var(--size-2xl);
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--navy);
+    transition: 0.7s ease-in-out;
+}
+
+.articles__item .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    background-color: var(--navy);
+    border-radius: 20px;
+}
+
+.articles__item:hover .overlay{
+    opacity: 0.80;
+
+}
+
+.articles__item:hover h5{
+    transform: translateY(-85px);
+    color: var(--bkg);
+}
+
+
+
+
+.friends-list-hero {
+    margin-top: 300px;
+    margin-bottom: 200px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.friends-list-hero h1 {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    font-size: var(--size-5xl);
+    font-weight: 800;
+    color: var(--orange);
+}
+
+.friends-list-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+    flex-wrap: nowrap; /* changed from wrap to nowrap */
+    overflow: hidden; /* ensures hidden items are not displayed */
+}
+
+.friends-list-item {
+    display: none; /* initially hide all items */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.friends-list-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.friends-list-item h5 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: var(--navy);
+    font-size: var(--size-xl);
+}
+
+.friends-list-item button {
+    width: 120px;
+    height: 35px;
+    background-color: var(--navy);
+    color: var(--bkg);
+    border-radius: 10px;
+    font-size: var(--size-base);
+    transition: 0.5s;
+}
+
+.friends-list-item button:hover {
+    background-color: var(--teal);
+}
+
+
+.pagination-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.pagination-indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--navy);
+    background-color: var(--bkg);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.pagination-indicator.active {
+    background-color: var(--navy);
+}
+
+
+
+
+
+
+
+
+
+
+
+ .friends-list-hero-recom{
+    margin-bottom: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.friends-list-hero-recom h1{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    font-size: var(--size-5xl);
+    font-weight: 800;
+    color: var(--orange);
+}
+
+.friends-list-hero-recom .friends-list-menu-recom{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+    flex-wrap: wrap;
+}
+
+.friends-list-hero-recom .friends-list-item-recom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    text-align: center;
+}
+
+.friends-list-hero-recom .friends-list-item-recom img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.friends-list-hero-recom .friends-list-item-recom h5{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: var(--navy);
+    font-size: var(--size-xl);
+}
+
+.friends-list-hero-recom .friends-list-item-recom h4{
+     margin-bottom: 10px;
+     color: var(--dark-gray);
+}
+
+.friends-list-hero-recom .friends-list-item-recom button{
+    width: 120px;
+    height: 35px;
+    background-color: var(--navy);
+    color: var(--bkg);
+    border-radius: 10px;
+    font-size: var(--size-base);
+    transition: 0.5s;
+}
+
+.friends-list-hero-recom .friends-list-item-recom button:hover{
+    background-color: var(--teal);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+    margin-top: 30px;
+    height: 80px;
+}
+
+.footer__menu{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-direction: row;
+    gap: 700px;
+}
+
+.footer__menu a{
+    color: var(--navy);
+    font-size: var(--size-xl);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.footer__menu a:hover{
+    color: var(--orange);
+}
+
+.social{
+    margin-top: -10px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.social i{
+    font-size: var(--size-3xl);
+}

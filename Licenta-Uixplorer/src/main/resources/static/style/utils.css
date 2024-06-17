@@ -1,0 +1,77 @@
+
+/* XS */
+@media (min-width: 475px){
+    .container{
+        max-width: 475px;
+    }
+}
+
+/* SM */
+@media (min-width: 640px){
+    .container{
+        max-width: 640px;
+    }
+}
+
+/* MD */
+@media (min-width: 768px){
+    .container{
+        max-width: 768px;
+    }
+}
+
+/* LG */
+@media (min-width: 1024px){
+    .container{
+        max-width: 1024px;
+    }
+    .section{
+        margin-top: 10rem;
+    }
+}
+
+/* XL */
+@media (min-width: 1280px){
+    .container{
+        max-width: 1280px;
+    }
+}
+
+/* 2XL */
+@media (min-width: 1536px){
+    .container{
+        max-width: 1536px;
+    }
+}
+
+
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: -0.05em;
+    background-color: #276764;
+    color: #FFFAF1;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    /* box-shadow: 0 10px 20px rgba(223, 115, 14, 0.3), 0 1px 1px rgba(223, 115, 14, 0.3), 0 0 100px -10px rgb(214, 58, 30); */
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(223, 115, 14, 0.25), 0 5px 5px rgba(223, 115, 14, 0.22), 0 0 120px -10px rgb(214, 58, 30);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    /* border: 1px solid red; */
+}
+
+.section{
+    margin-top: 5rem;
+}
