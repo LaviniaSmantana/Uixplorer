@@ -114,6 +114,10 @@ main {
     flex-direction: column;
 }
 
+.msg__details a{
+    color: var(--orange);
+}
+
 .discussion__msg{
     width: 1000px;
     text-align: left;

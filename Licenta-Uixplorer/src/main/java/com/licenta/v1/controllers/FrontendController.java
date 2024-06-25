@@ -743,6 +743,7 @@ public class FrontendController {
 
 
         if(!discussion.getMessage().isEmpty()){
+            discussion.setMessage(CommentUtil.convertUrlsToLinks(discussion.getMessage()));
             LocalDateTime now = LocalDateTime.now();
             String time = now.format(dateTimeFormatter);
             discussion.setTimePosted(time);

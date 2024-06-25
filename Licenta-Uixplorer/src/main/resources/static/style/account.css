@@ -95,7 +95,7 @@ input[type="file"]{
     margin-top: 50px;
 }
 
-.account_menu button{
+.account_menu .save button{
     text-align: center;
     width: 220px;
     height: 50px;
@@ -109,7 +109,7 @@ input[type="file"]{
     transition: 0.5s;
 }
 
-.account_menu button:hover{
+.account_menu .save button:hover{
     background-color: var(--orange-light);
     color: var(--light-gray-full);
 }

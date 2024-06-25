@@ -48,7 +48,6 @@
                                             <img th:src="${friend.image}">
                                         </div>
                                         <h5 th:text="${friend.name}"></h5>
-                                        <i class="fa-regular fa-message"></i>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +133,7 @@
 
             <div class="msg__details">
                 <div class="discussion__msg">
-                    <h3 th:text="${discussion.message}"></h3>
+                    <h3 th:utext="${discussion.message}"></h3>
                 </div>
                 <div class="comments__menu">
                     <div class="comment__item" th:each="comment : ${discussion.commentsList}">
