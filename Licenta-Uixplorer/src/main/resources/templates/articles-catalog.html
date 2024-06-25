@@ -121,11 +121,11 @@
 
 
         <div class="articles__menu">
-
-            <a th:each="article : ${articlesPage.content}" th:href="@{/article?id=}+${article.id}">
+            <a th:each="article : ${articlesPage.content}"
+               th:href="@{/article?id=}+${article.id}">
                 <div class="articles__item">
                     <div id="imgContainer">
-                        <img th:src="${article.mainImg}" loading="lazy">
+                        <img th:src="${article.mainImg}">
                     </div>
                     <div class="overlay"></div>
                     <div class="article__title">
@@ -133,7 +133,6 @@
                     </div>
                 </div>
             </a>
-
         </div>
 
         <div class="pages">

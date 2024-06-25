@@ -12,7 +12,6 @@
     <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
     <link rel="icon" type="image/png" th:href="@{/images/icon-nobg.png}">
     <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css}">
-
     <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
     <link th:href="@{https://fonts.googleapis.com/css2?family=Ubuntu&display=swap}" rel="stylesheet">
 </head>
@@ -194,6 +193,19 @@
 
 <script th:src="@{/files/header-functions.js}"> </script>
 
+
+
+<!-- Acest script utilizeaza Web Speech API, disponibil în majoritatea browserelor,-->
+<!-- pentru a converti textul din pagina web in vorbire. API-ul Web Speech ofera doua functionalitati principale:-->
+<!-- recunoasterea vocala (Speech Recognition) si sinteza vocala (Speech Synthesis).-->
+
+<!-- Documentatie API:-->
+<!-- - Web Speech API: https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API-->
+<!-- - SpeechSynthesis: https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis-->
+<!-- - SpeechSynthesisUtterance: https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance-->
+
+<!-- Script-ul gestioneaza evenimentele pentru butonul de play/pause (incepe, opreste si reia sinteza vocala).-->
+
 <script>
     var isSpeaking = false;
     var paused = false;
@@ -217,7 +229,8 @@
     });
 
     function startSpeaking() {
-      
+
+    <!-- Anulam orice sinteza vocala existenta inainte de a incepe o noua sinteza -->
         if ('speechSynthesis' in window) {
             window.speechSynthesis.cancel();
         }
@@ -237,7 +250,7 @@
             isSpeaking = true;
             paused = false; // Reset paused state
         } else {
-            alert('Browser-ul tău nu suportă funcția de vorbire text!');
+            alert('Browser-ul nu suporta functia de vorbire text!');
         }
     }
 
@@ -257,7 +270,7 @@
         }
     }
 
-
+    <!-- Anulam orice sinteza vocala existenta inainte de a parasi pagina -->
     window.addEventListener('beforeunload', function() {
         if ('speechSynthesis' in window) {
             window.speechSynthesis.cancel();

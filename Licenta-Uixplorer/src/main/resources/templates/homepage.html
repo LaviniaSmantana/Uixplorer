@@ -17,6 +17,7 @@
     <link rel="stylesheet" th:href="@{/files/MarkerCluster.css}">
     <link rel="stylesheet" th:href="@{/files/MarkerCluster.Default.css}">
     <link rel="stylesheet" th:href="@{https://unpkg.com/leaflet/dist/leaflet.css}">
+    <!-- Pentru harta interactiva, Cod si fisiere css + js folosite de la Leaflet, sursa: https://github.com/Leaflet/Leaflet.markercluster -->
 
 </head>
 <body>
@@ -280,8 +281,6 @@
 <script th:src="@{/files/header-functions.js}"> </script>
 
 
-
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const itemsPerPage = 3;
@@ -331,7 +330,6 @@
             });
         });
 
-        // Change to next page every 5 seconds
         setInterval(nextPage, 5000);
     });
 </script>
@@ -340,6 +338,8 @@
 
 <script th:src="@{/files/leaflet.markercluster.js}"> </script>
 <script th:src="@{/files/leaflet.markercluster-src.js}"> </script>
+
+<!-- Pentru harta interactiva, Cod si fisiere css + js folosite de la Leaflet, sursa: https://github.com/Leaflet/Leaflet.markercluster -->
 
 <script>
     var map = L.map('map').setView([0, 0], 2);
@@ -365,7 +365,7 @@
             map.addLayer(markersGroup);
         })
         .catch(error => {
-            console.error('A apărut o eroare:', error);
+            console.error('A aparut o eroare:', error);
         });
 </script>
 

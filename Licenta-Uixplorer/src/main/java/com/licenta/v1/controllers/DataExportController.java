@@ -49,7 +49,11 @@ public class DataExportController {
         return userArticleRepo.findAll();
     }
 
-
+    /**
+     * Function used to return only the id, name, latitude and longitude attributes from all users instances.
+     * These will be used to create the interactive map.
+     * @return A list of type UserMapInfo.
+     */
     @GetMapping("/users")
     public List<UserMapInfo> getAllUsersHome() {
         List<AppUser> users = userRepo.findAll();

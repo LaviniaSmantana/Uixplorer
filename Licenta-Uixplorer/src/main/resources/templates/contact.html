@@ -107,6 +107,12 @@
 
 <section class="box container">
 
+    <!--
+    Acest formular utilizeaza Web3Forms pentru a construi un formular de contact.
+    Web3Forms este un serviciu API care permite trimiterea formularelor de contact fara a necesita un backend propriu.
+    Este necesara generarae unei chei de acces pe site-ul : https://web3forms.com/
+    -->
+
     <form th:action="@{https://api.web3forms.com/submit}" method="POST" class="contact-left">
         <div class="contact-left-title">
             <h1>Feel free to reach out with feedback, questions or just to say hello!</h1>
